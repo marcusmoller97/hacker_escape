@@ -1,0 +1,719 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+
+// VARIABLES
+// BASIC CSS
+// BUTTONS
+// HEADER
+// HAMBURGERMENU
+// MAIN NAVIGATION
+// HERO
+// TESTIMONIAL
+// CHALLENGES
+// CARDS
+// QUOTE
+// ARTICLE
+// FOOTER
+
+//////////////////////////// VARIABLES /////////////////////////
+
+$LIGHTBLUE: #8acfe5;
+$DARKBLUE: #36769d;
+$RED: #e3170a;
+$REDOVER: #c91609;
+$BACKGROUND-BLACK: #011827;
+$GREY: #b6bdb5;
+$WHITE: #ffffff;
+
+$mobile-breakepoint: 640px;
+$small-breakepoint: 768px;
+$medium-breakepoint: 992px;
+$large-breakepoint: 1280px;
+
+//////////////////////////// BASIC CSS /////////////////////////
+
+html {
+  font-size: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* //////////////////// BUTTONS ////////////////// */
+
+.button {
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.blue-button {
+  background-color: $LIGHTBLUE;
+  border: none;
+  color: #011827;
+  font-size: 1.125rem;
+  padding: 0.938rem 2.813rem;
+}
+
+.blue-button:hover {
+  background-color: $DARKBLUE;
+  color: $WHITE;
+}
+
+.blue-line-button {
+  border: 2px solid $LIGHTBLUE;
+  background-color: transparent;
+  color: $LIGHTBLUE;
+  font-size: 1.125rem;
+  padding: 0.938rem 3.125rem;
+}
+
+.blue-line-button:hover {
+  background-color: $LIGHTBLUE;
+  color: $BACKGROUND-BLACK;
+}
+
+.red-button {
+  background-color: $RED;
+  border: none;
+  color: $WHITE;
+  font-size: 1.125rem;
+  padding: 0.938rem 2.813rem;
+}
+
+.red-button:hover {
+  background-color: $REDOVER;
+}
+
+.red-button-small {
+  background-color: $RED;
+  border: none;
+  color: $WHITE;
+  font-size: 0.8rem;
+  padding: 0.7rem 1.8rem;
+}
+
+.red-button-small:hover {
+  background-color: $REDOVER;
+}
+
+/* ///////////////// HEADER ///////////////// */
+
+header {
+  background-color: $BACKGROUND-BLACK;
+  color: $WHITE;
+  padding: 1rem 1rem 0.8rem;
+
+  @media screen and (min-width: $small-breakepoint) {
+    padding: 1rem 1rem 0;
+  }
+}
+
+.header-content {
+  // background-color: #c91609;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logotype {
+  display: flex;
+  justify-content: start;
+
+  &__image {
+    width: auto;
+    height: 70px;
+  }
+
+  &__title {
+    color: $WHITE;
+    font-size: 1.125rem;
+    font-weight: 700;
+    width: 5.25rem;
+    margin: 5px;
+  }
+  @media screen and (min-width: $small-breakepoint) {
+    & {
+      align-items: flex-end;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      width: 17rem;
+      padding: 0 0.6rem 0.2rem;
+    }
+  }
+
+  @media screen and (min-width: $medium-breakepoint) {
+    &__title {
+      font-size: 1.8rem;
+      width: 20rem;
+      padding: 0 0.6rem 0.2rem;
+    }
+  }
+}
+
+//////////////////// MAIN NAVIGATION ///////////////////
+
+.main-nav__container {
+  @media screen and (max-width: $mobile-breakepoint) {
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff90;
+    display: none;
+    justify-content: stretch;
+    align-items: stretch;
+    transform: scale(1);
+    transition: transform 3s ease-in-out;
+
+    &--active {
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: $small-breakepoint) {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+}
+
+.main-nav {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+
+  @keyframes openAnimation {
+    from   {transform: scale(.8); opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+  }
+
+  @media screen and (max-width: $mobile-breakepoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 1rem;
+    font-size: 2rem;
+    background-color: #011827;
+    box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+    animation: openAnimation .3s forwards;
+    }
+
+  &__item {
+    display: inline;
+    padding: 0 1rem;
+
+    @media screen and (max-width: $mobile-breakepoint) {
+      font-size: 2rem;
+      padding: 2rem;
+    }
+
+    @media screen and (min-width: $small-breakepoint) {
+      font-size: 0.9rem;
+      padding: 0 1.6rem;
+    }
+  }
+
+  &__item-link {
+    color: $WHITE;
+    text-decoration: none;
+    padding: 0.5rem;
+
+    &:hover,
+    &:active {
+      color: $LIGHTBLUE;
+    }
+  }
+}
+.btnOpen {
+  border: none;
+  padding: 0;
+  display: block;
+  margin-inline-start: auto;
+  fill: $WHITE;
+  background: transparent;
+
+  @media screen and (min-width: $mobile-breakepoint) {
+    display: none;
+  }
+}
+
+.btnClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+
+  @media screen and (min-width: $mobile-breakepoint) {
+    display: none;
+  }
+}
+
+/* //////////////// HERO //////////////// */
+
+.hero {
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__container {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  &__red-link {
+    display: none;
+  }
+
+  &__small-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $DARKBLUE;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.45rem;
+  }
+
+  &__small-link:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: $small-breakepoint) {
+    &__container {
+      margin-top: -1rem;
+    }
+
+    &__red-link {
+      display: inline;
+      margin-right: 1rem;
+    }
+
+    &__small-link {
+      display: none;
+    }
+  }
+}
+
+/* /////////////// TESTIMONIAL //////////// */
+
+.testimonial__container {
+  margin: 0 auto;
+  padding: 0 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+
+  @media screen and (min-width: $large-breakepoint) {
+    padding: 0 10rem;
+  }
+}
+
+.testimonial{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 4rem 1fr;
+  margin: 3rem 1rem;
+
+  &__img {
+    width: 4rem;
+    height: auto;
+  }
+
+  &__quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__informant {
+    font-size: 0.9rem;
+    font-style: normal;
+  }
+}
+@media screen and (max-width: $mobile-breakepoint) {
+  .testimonial--second {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $small-breakepoint) {
+  .testimonial__container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 7rem 0 1rem 0;
+  }
+
+  .testimonial {
+    margin: 0 1rem;
+  }
+
+}
+
+/* ///////////////// CHALLENGES /////////////// */
+
+.challenges {
+  justify-items: center;
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &__container {
+    text-align: center;
+    margin-top: 3.4rem;
+  }
+
+  &__link-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  &__red-link {
+    display: none;
+  }
+
+  &__small-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $DARKBLUE;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.45rem;
+  }
+
+  &__small-link:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: $small-breakepoint) {
+    &__container {
+      margin: 5rem 0 3rem 0;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 3.5rem;
+    }
+
+    &__red-link {
+      display: inline;
+      margin-right: 1rem;
+    }
+
+    &__small-link {
+      display: none;
+    }
+  }
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: center;
+}
+
+/* //////////// CARDS //////////////*/
+
+.card__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  //overflow-x: auto;
+  // overscroll-behavior-inline: contain;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 6rem;
+
+  @media screen and (min-width: $small-breakepoint) {
+    gap: 2rem;
+    grid-auto-columns: 40%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media screen and (min-width: $medium-breakepoint) {
+    gap: 2rem;
+    grid-auto-columns: 31%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media screen and (min-width: $large-breakepoint) {
+    padding: 1rem 6rem 1rem;
+  }
+}
+
+.card {
+  box-shadow: 0px 0px 8px 0px rgba(182, 189, 181, 0.75);
+  border-radius: 5px;
+  padding: 0;
+  height: auto;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &__body {
+    padding: 0.125rem 1rem;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    text-align: right;
+    margin-bottom: 1.2rem;
+  }
+
+  &__participants {
+    font-size: 0.6rem;
+    display: inline-block;
+  }
+
+  @media screen and (min-width: $small-breakepoint) {
+    max-width: 19rem;
+  }
+}
+
+.starholder__item {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+
+/* ///////////////////// QUOTE /////////////////// */
+
+.quote {
+  background-color: $BACKGROUND-BLACK;
+  padding: 3.75rem 1.875rem 5rem 1.875rem;
+  color: $WHITE;
+  text-align: center;
+  margin: 0;
+
+  &__text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.85rem;
+    text-align: center;
+    margin-bottom: 3.6rem;
+  }
+}
+
+@media screen and (min-width: $small-breakepoint) {
+  .quote {
+    padding: 6rem 6rem 6rem 6rem;
+  }
+}
+
+@media screen and (min-width: $medium-breakepoint) {
+  .quote {
+    padding: 6rem 20rem 8rem;
+  }
+}
+
+@media screen and (min-width: $large-breakepoint) {
+  .quote {
+    padding: 6rem 24rem 8rem;
+  }
+}
+
+/* ////////////////////  ARTICLE //////////////////*/
+
+.article {
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__text-container {
+    padding: 1rem 1rem 1.875rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  &__link {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: $small-breakepoint) {
+  .article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 7rem;
+
+    &__img:nth-last-of-type(1) {
+      order: 4;
+    }
+    &__text-container {
+      padding: 1.7rem 2rem;
+    }
+
+    &__title {
+      font-size: 1.3rem;
+    }
+
+    &__text {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+    }
+
+    &__link {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $medium-breakepoint) {
+  .article {
+    &__text-container {
+      padding: 3rem 4rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__text {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    &__link {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $large-breakepoint) {
+  .article {
+    &__text-container {
+      padding: 6rem 8rem;
+    }
+  }
+}
+
+/* //////////////////// FOOTER //////////////////*/
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  padding: 3rem 1.2rem;
+  background-color: $BACKGROUND-BLACK;
+  color: $WHITE;
+
+  @media screen and (min-width: $small-breakepoint) {
+    grid-template-columns: 40% 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 7rem 5.6rem 8rem;
+  }
+}
+
+.footer {
+  &__heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0 0 0 0;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $small-breakepoint) {
+    &__contact {
+      grid-column: 3/3;
+    }
+
+    &__social {
+      grid-column: 4/4;
+    }
+    &__text {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: $large-breakepoint) {
+    &__text {
+      font-size: 1rem;
+    }
+  }
+}
+
+.footer-nav {
+  &__item {
+    color: $WHITE;
+    text-decoration: none;
+
+    @media screen and (min-width: $small-breakepoint) {
+      font-size: 0.8rem;
+    }
+
+    @media screen and (min-width: $large-breakepoint) {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.card__layout {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+}
+
+.font-icon {
+    margin-left: auto;
+}

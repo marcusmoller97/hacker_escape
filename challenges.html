@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>challenges</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="challenges.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="card.css" />
+		<link rel="stylesheet" href="Datepicker/datepicker.material.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<script src="Datepicker/datepicker.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="header-content">
+				<div class="logotype">
+					<a href="index.html" role="link">
+						<img
+							class="logotype__image"
+							src="images/logotype.png"
+							alt="Escaperoom logotype" />
+					</a>
+					<h1 class="logotype__title">Hacker Escape Rooms</h1>
+				</div>
+				<button class="btnOpen">
+					<svg viewBox="0 0 100 100" width="40">
+						<rect class="top" width="80" height="10" x="10" y="25" rx="5"></rect>
+						<rect class="middle" width="80" height="10" x="10" y="45" rx="5"></rect>
+						<rect class="bottom" width="80" height="10" x="10" y="65" rx="5"></rect>
+					</svg>
+				</button>
+			</div>
+			<nav role="menu">
+				<div class="main-nav__container">
+					<ul role="presentation" class="main-nav">
+						<button class="btnClose">
+							<svg width="40" height="40" viewbox="0 0 40 40">
+								<path
+									d="M 10,10 L 30,30 M 30,10 L 10,30"
+									stroke="white"
+									stroke-width="4" />
+							</svg>
+						</button>
+						<li class="main-nav__item">
+							<a href="#" role="menuitem" class="main-nav__item-link">Play on-site</a>
+						</li>
+						<li class="main-nav__item">
+							<a href="#" role="menuitem" class="main-nav__item-link">Play online</a>
+						</li>
+						<li class="main-nav__item">
+							<a href="#" role="menuitem" class="main-nav__item-link">The Story</a>
+						</li>
+						<li class="main-nav__item">
+							<a href="#" role="menuitem" class="main-nav__item-link">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!--End header-->
+
+
+		<section class="challenges">
+			<!-- TODO- change to correct text -->
+			<h2 class="challenges__title">Our challenges</h2>
+			<div class="filterBtn__div">
+				<button class="filterBtn">Filter challenges</button>
+			</div>
+			<div class="filterWindow">
+				<h2 class="filterwindow__Challenges">Filter challenges</h2>
+				<div class="buttonX">
+					<button class="filterBtnClose"></button>
+				</div>
+				<div class="filterWindow__Checkbox">
+					<h3 class="filterWindow__ByType">By type</h3>
+					<!-- Checkboxes	  -->
+					<label>
+						<input type="checkbox" name="activeItems" value="online" /> Include online
+						challenges
+					</label>
+					<label>
+						<input type="checkbox" name="activeItems" value="onsite" /> Include on-site
+						challenges
+					</label>
+				</div>
+
+				<form class="filterForm">
+					<h3 class="filterWindow__ByRating__h3">By rating</h3>
+					<div class="filterWindow__ByRating">
+						<!-- star rating -->
+						<!-- min star rating -->
+						<div class="star-rating">
+							<!-- #todo- reminder to use sass not css -->
+							<!-- hide with display none on the raido buttons -->
+							<input type="radio" id="min-star-5" name="minRating" value="5" />
+							<label for="min-star-5" title="5 stars">★</label>
+
+							<input type="radio" id="min-star-4" name="minRating" value="4" />
+							<label for="min-star-4" title="4 stars">★</label>
+
+							<input type="radio" id="min-star-3" name="minRating" value="3" />
+							<label for="min-star-3" title="3 stars">★</label>
+
+							<input type="radio" id="min-star-2" name="minRating" value="2" />
+							<label for="min-star-2" title="2 stars">★</label>
+
+							<input type="radio" id="min-star-1" name="minRating" value="1" />
+							<label for="min-star-1" title="1 star">★</label>
+						</div>
+						<div class="starRating__div">
+							<p class="filterForm_p">to</p>
+							<div class="filterSection">
+								<!-- max star rating -->
+								<div class="star-rating">
+									<input
+										type="radio"
+										id="max-star-5"
+										name="maxRating"
+										value="5" />
+									<label for="max-star-5" title="5 stars">★</label>
+
+									<input
+										type="radio"
+										id="max-star-4"
+										name="maxRating"
+										value="4" />
+									<label for="max-star-4" title="4 stars">★</label>
+
+									<input
+										type="radio"
+										id="max-star-3"
+										name="maxRating"
+										value="3" />
+									<label for="max-star-3" title="3 stars">★</label>
+
+									<input
+										type="radio"
+										id="max-star-2"
+										name="maxRating"
+										value="2" />
+									<label for="max-star-2" title="2 stars">★</label>
+
+									<input
+										type="radio"
+										id="max-star-1"
+										name="maxRating"
+										value="1" />
+									<label for="max-star-1" title="1 star">★</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<div class="filterWindow__ByTags">
+					<h3 class="filterWindow__ByTags__h3">By tags</h3>
+					<!-- by tags ex web/linux/crypto -->
+					<!-- #todo- make sure to check rooms for what tags they have -->
+					<div class="tag-filter">
+						<input type="checkbox" name="tags" value="javascript" id="javascript" />
+						<label for="javascript">JavaScript</label>
+
+						<input type="checkbox" name="tags" value="electronics" id="electronics" />
+						<label for="electronics">Electronics</label>
+
+						<input type="checkbox" name="tags" value="linux" id="linux" />
+						<label for="linux">Linux</label>
+
+						<input type="checkbox" name="tags" value="coding" id="coding" />
+						<label for="coding">Coding</label>
+						<!--  -->
+						<div id="extra-tags" style="display: none">
+							<!--  -->
+							<input type="checkbox" name="tags" value="ssh" id="ssh" />
+							<label for="ssh">SSH</label>
+
+							<input type="checkbox" name="tags" value="phreaking" id="phreaking" />
+							<label for="phreaking">Phreaking</label>
+
+							<input type="checkbox" name="tags" value="hacking" id="hacking" />
+							<label for="hacking">Hacking</label>
+
+							<input type="checkbox" name="tags" value="web" id="web" />
+							<label for="web">Web</label>
+
+							<input type="checkbox" name="tags" value="bash" id="bash" />
+							<label for="bash">Bash</label>
+
+							<input type="checkbox" name="tags" value="ctf" id="ctf" />
+							<label for="ctf">CTF</label>
+						</div>
+						<button id="show-more-tags-btn">Show more</button>
+					</div>
+				</div>
+				<div class="filterWindow__Search">
+					<h3 class="filterWindow__Search__h3">Or type to search for keyword</h3>
+					<input
+						class="filterSearch_input"
+						type="text"
+						placeholder="Start typing to filter" />
+				</div>
+				<div class="resetBtn">
+					<button id="resetFilters">
+						<i class="fa-solid fa-trash-can"></i>
+					</button>
+				</div>
+
+			</div>
+
+			<container class="api-challenges">
+				<div id="challenge-list"></div>
+				<div id="challenge-listOnSite"></div>
+			</container>
+			<!--Ends card_container-->
+
+			<!-- <div class="challenges__container">
+				<a href="#" role="link" class="button red-button challenges__red-link"
+					>Online challenges</a
+				>
+				<a href="#" role="link" class="button blue-button challenges__blue-link"
+					>On-site challenges</a
+				>
+			</div>
+			<div class="challenges__link-container">
+				<a href="#" role="link" class="challenges__small-link">Online challenges</a>
+			</div> -->
+		</section>
+		<!--Ends challenges-->
+		<footer>
+			<div class="footer__information">
+				<h1 class="footer__heading">[Esc] Hacker Escape Rooms</h1>
+				<p class="footer__text">
+					Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec
+					eo spectant haec quoque vos omnino desit illud quo solo felicitatis
+					libertatisque perficiuntur.
+				</p>
+			</div>
+
+			<div class="footer__contact">
+				<h1 class="footer__heading">Site map</h1>
+				<nav class="footer-nav" role="menu">
+					<ul role="presentation">
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">The Story</a>
+						</li>
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Contact Us</a>
+						</li>
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Legal</a>
+						</li>
+					</ul>
+
+					<ul role="presentation">
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Play online</a>
+						</li>
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Play on-site</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="footer__social">
+				<h1 class="footer__heading">Follow us on</h1>
+				<nav class="footer-nav" role="menu">
+					<ul role="presentation">
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Facebook</a>
+						</li>
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Instagram</a>
+						</li>
+						<li>
+							<a href="#" class="footer-nav__item" role="menuitem">Twitter</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+
+		<!-- Modal-dialog -->
+		<dialog class="modal" id="modal">
+			<span class="close-modal-button">&times;</span>
+			  
+			<form data-multi-step class="multi-step-form" method="dialog">
+			  
+			  <!-- .multi-step-form__completed -->
+			  <div class="multi-step-form__completed" hidden>
+				<svg
+				  xmlns="http://www.w3.org/2000/svg"
+				  fill="none"
+				  viewBox="0 0 24 24"
+				  stroke-width="1.5"
+				  stroke="currentColor">
+				  <path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+				  />
+				</svg>
+			
+				<h3 class="multi-step-form__title">Thank You!</h3>
+				<p class="multi-step-form__link">
+				  <a href="challenges.html">Back to challenges</a>
+				</p>
+			  </div>
+			  <!-- /.multi-step-form__completed -->
+			
+			  <!-- .booking-card -->
+			  <div class="booking-card active" data-step>
+				<h2 class="booking-card__header" id="header1"></h2>
+				<p class="booking-card__description">What date would you like to come?</p>
+			
+				<!-- hidden date -->
+				<input type="text" name="challenge" id="challenge"
+				  class="booking-card__input"readonly hidden />
+			
+				<label for="simple" class="booking-card__label">Date</label>
+				<input type="date" id="simple" name="date" class="booking-card__input booking-card__input--date" required/>
+			
+				<div class="booking-card__controls">
+				  <button
+					type="button"
+					class="booking-card__button booking-card__button--next"
+					next-data
+				  >
+					Search available times
+				  </button>
+				</div>
+			  </div>
+			  <!-- /.booking-card -->
+			
+			  <!-- .booking-card -->
+			  <div class="booking-card" data-step>
+				<h2 class="booking-card__header" id="header2"></h2>
+			
+				<label for="name" class="booking-card__label">Name</label>
+				<input
+				  type="text"
+				  name="name"
+				  id="name"
+				  class="booking-card__input booking-card__input--text"
+				  placeholder="Name"
+				/>
+			
+				<label for="email" class="booking-card__label">E-mail</label>
+				<input
+				  type="email"
+				  name="email"
+				  id="email"
+				  class="booking-card__input booking-card__input--email"
+				  placeholder="Email address"
+				/>
+			
+				<label for="time" class="booking-card__label">What time?</label>
+				<select name="time" id="time" class="booking-card__select"></select>
+			
+				<label for="participants" class="booking-card__label">How many participants?</label>
+				<select
+				  type="number"
+				  name="participants"
+				  id="participants"
+				  class="booking-card__input booking-card__input--number"
+				></select>
+			
+				<div class="booking-card__controls">
+				  <button
+					type="button"
+					class="booking-card__button booking-card__button--prev"
+					data-previous
+				  >
+					Back to date
+				  </button>
+				  <button
+					type="submit"
+					class="booking-card__button booking-card__button--submit"
+				  >
+					Submit booking
+				  </button>
+				</div>
+			  </div>
+			  <!-- /.booking-card -->
+			</form>
+			
+			</div>
+		  </dialog>
+		<!-- End Modal-dialog -->
+
+		<script type="module" src="main.js"></script>
+		<script type="module" src="challenges.js"></script>
+		<script type="module" src="js/booking.js"></script>
+		<script type="module" src="filter.js"></script>
+	</body>
+</html>

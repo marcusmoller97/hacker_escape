@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* All online challenges  */
+#content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column; /*Placera innehållet i en kolumn  */
+  justify-content: center; /* Centrera innehållet vertikalt */
+  align-items: center; /* Centrera innehållet horisontellt */
+  background-color: #f0f0f0;
+  text-align: center;
+}/*# sourceMappingURL=challenges.css.map */

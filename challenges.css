@@ -1,0 +1,27 @@
+/* .api-challenges { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} */
+#content { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;  
+  }
+
+#backToTopButton {
+  grid-row-start: 11;
+  grid-column: 1 / span 3;
+}
+
+  @media screen and (max-width: 768px) {
+    #content {
+      grid-template-columns: 1fr 1fr ;
+      }
+
+      #backToTopButton {
+        grid-row-start: 16;
+        grid-column: span 2;
+
+      }
+    }
+
